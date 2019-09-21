@@ -1,0 +1,90 @@
+// /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  src: url(assets/fonts/OpenSans-Regular.ttf) format('truetype');;
+}
+
+
+html, head, body {
+  margin: 0;
+  font-family: 'Open Sans', 'Roboto', sans-serif !important;
+}
+
+.my-code-editor {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100% !important;
+
+  .editor-container {
+    height: 100% !important;
+  }
+}
+
+// Scrollbar
+
+// .e-treeview {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #7d7d7d;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #d5d5d5;
+  }
+// }
+
+
+
+.show-hand {
+  cursor: pointer;
+}
+
+
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+
+.rotation {
+  animation: rotation 2s infinite linear;
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+.custom-snackbar {
+  &-success {
+    &.mat-snack-bar-container {
+      margin: 30px !important;
+      color: white !important;
+      background-color: #497d44 !important;
+    }
+    .mat-simple-snackbar-action {
+      color: lightgray !important;
+    }
+  }
+  &-failure {
+    &.mat-snack-bar-container {
+      margin: 30px !important;
+      color: white !important;
+      background-color: red !important;
+    }
+    .mat-simple-snackbar-action {
+      color: white !important;
+    }
+  }
+}

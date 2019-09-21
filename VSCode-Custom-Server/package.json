@@ -1,0 +1,37 @@
+{
+    "name": "sample-monaco-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/server.ts",
+    "scripts": {
+        "tsc": "tsc",
+        "rimraf": "rimraf",
+        "nodemon": "nodemon",
+        "webpack": "webpack",
+        "compile": "npm run clean && npm run webpack",
+        "clean": "rimraf dist",
+        "start": "node ./dist/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "directory-tree": "^2.2.3",
+        "express": "^4.17.1",
+        "lodash": "^4.17.11",
+        "ts-loader": "^6.0.4",
+        "ws": "^7.0.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.0",
+        "@types/lodash": "^4.14.134",
+        "@types/ws": "^6.0.1",
+        "nodemon": "^1.19.1",
+        "rimraf": "^2.7.1",
+        "typescript": "^3.5.2",
+        "webpack": "^4.35.0",
+        "webpack-cli": "^3.3.5"
+    }
+}

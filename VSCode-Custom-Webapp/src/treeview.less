@@ -1,0 +1,256 @@
+// @font-face {
+//   font-family: "e-icons";
+//   font-style: normal;
+//   font-weight: normal;
+//   src: url(./assets/treeview/e-icons.ttf);
+// }
+
+.e-icons {
+  font-family: "e-icons";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+}
+
+
+
+// Host Component
+// :host {
+// display: flex;
+// flex: 1 1 auto;
+// height: 100%;
+// }
+
+/*! TreeView's material theme wise override definitions and variables */
+
+.e-treeview .e-list-item div.e-icons.interaction {
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  border-radius: 15px;
+  transition: transform .2s ease-in-out;
+}
+
+.e-treeview .e-list-item .e-icons.e-icon-collapsible {
+  transform: rotate(90deg);
+}
+
+
+/*! TreeView icons */
+
+.e-treeview .e-list-item div.e-icons::before {
+  content: '\e22f';
+}
+
+.e-treeview {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+
+  overflow-x: auto;
+
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.e-treeview>.e-ul {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+
+.e-treeview .e-ul {
+  margin: 0;
+  padding: 0 0 0 0;
+}
+
+.e-treeview li.e-node-collapsed .e-list-item .e-fullrow {
+  display: none;
+}
+
+.e-treeview .e-list-item {
+  list-style: none;
+  padding: 1px 0;
+}
+
+.e-treeview .e-list-item .e-ul {
+  margin: 2px 0 -2px;
+  padding: 0 0 0 24px;
+}
+
+.e-treeview .e-list-item .e-icons.e-icons-spinner::before {
+  content: none;
+}
+
+.e-treeview .e-icons .e-spinner-pane {
+  position: relative;
+}
+
+.e-treeview .e-text-content {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 0 0 24px;
+}
+
+.e-treeview .e-fullrow {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 22px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  &:hover {
+    background-color: rgba(99, 99, 99, 0.35);
+  }
+}
+
+.e-treeview .e-list-text {
+  box-sizing: border-box;
+  display: inline-block;
+  // line-height: 30px;
+  margin: 0;
+  // min-height: 30px;
+  padding: 0 5px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.e-treeview .e-list-icon,
+.e-treeview .e-list-img {
+  display: inline-block;
+  height: 18px;
+  margin: 0 0 0 3px;
+  vertical-align: middle;
+  width: 18px;
+}
+
+.e-treeview .e-list-icon+.e-list-icon,
+.e-treeview .e-list-icon+.e-list-img,
+.e-treeview .e-list-img+.e-list-icon,
+.e-treeview .e-list-img+.e-list-img {
+  margin: 0 0 0 10px;
+}
+
+.e-treeview .e-list-icon+.e-list-text,
+.e-treeview .e-list-img+.e-list-text {
+  padding: 0 10px;
+}
+
+.e-treeview .e-icon-collapsible,
+.e-treeview .e-icon-expandable {
+  display: inline-block;
+  height: 20px;
+  margin: 0 0 0 -24px;
+  vertical-align: middle;
+  width: 24px;
+}
+
+.e-treeview .e-icon-collapsible::before,
+.e-treeview .e-icon-expandable::before {
+  display: inline-block;
+  padding: 5px;
+}
+
+.e-treeview .e-load {
+  animation: rotation .5s infinite linear;
+}
+
+.e-bigger .e-treeview .e-list-text,
+.e-treeview.e-bigger .e-list-text {
+  font-size: 14px;
+}
+
+.e-bigger .e-treeview .e-icon-collapsible::before,
+.e-bigger .e-treeview .e-icon-expandable::before,
+.e-treeview.e-bigger .e-icon-collapsible::before,
+.e-treeview.e-bigger .e-icon-expandable::before {
+  font-size: 12px;
+}
+
+.e-treeview {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.e-treeview .e-text-content,
+.e-treeview .e-fullrow {
+  border-color: transparent;
+}
+
+.e-treeview .e-list-text {
+  color: white;
+  font-size: 13px;
+}
+
+.e-treeview .e-list-icon,
+.e-treeview .e-list-img {
+  font-size: 18px;
+}
+
+.e-treeview .e-icon-collapsible,
+.e-treeview .e-icon-expandable {
+  color: white;
+}
+
+.e-treeview .e-icon-collapsible::before,
+.e-treeview .e-icon-expandable::before {
+  font-size: 10px;
+}
+
+.e-treeview .e-list-img {
+  width: 25px;
+  height: 25px
+}
+
+.e-treeview .e-list-icon.folder {
+  background-position: -10px -552px
+}
+
+.e-treeview .e-list-icon.docx {
+  background-position: -10px -20px
+}
+
+.e-treeview .e-list-icon.ppt {
+  background-position: -10px -48px
+}
+
+.e-treeview .e-list-icon.pdf {
+  background-position: -10px -104px
+}
+
+.e-treeview .e-list-icon.images {
+  background-position: -10px -132px
+}
+
+.e-treeview .e-list-icon.zip {
+  background-position: -10px -188px
+}
+
+.e-treeview .e-list-icon.audio {
+  background-position: -10px -244px
+}
+
+.e-treeview .e-list-icon.video {
+  background-position: -10px -272px
+}
+
+.e-treeview .e-list-icon.exe {
+  background-position: -10px -412px
+}
+
+.e-treeview .e-list-icon {
+  background-repeat: no-repeat;
+  height: 20px;
+  background-image: url(./assets/treeview/icons.png);
+  transform: scale(0.8);
+}

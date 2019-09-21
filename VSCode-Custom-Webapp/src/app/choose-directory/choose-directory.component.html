@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Choose directory or file...</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Path" [formControl]="nameFormControl" />
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Path is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="number" placeholder="Depth" [formControl]="depthFormControl" />
+        <mat-error *ngIf="depthFormControl.hasError('required')">
+            Depth is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="depthFormControl.hasError('min') || depthFormControl.hasError('max')">
+            Range should be 0-5
+        </mat-error>
+    </mat-form-field>
+    <p class="error" *ngIf="error.isError">{{error.errorMessage}}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button (click)="onOpen()" [disabled]="!nameFormControl.valid || !depthFormControl.valid">Open</button>
+</div>

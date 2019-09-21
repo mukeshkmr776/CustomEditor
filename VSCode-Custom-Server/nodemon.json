@@ -1,0 +1,11 @@
+{
+    "watch": ["src"],
+    "ext": "ts json",
+    "ignore": [
+        "dist/**/*",
+        ".git/**/*",
+        "node_modules/**/node_modules"
+    ],
+    "delay": "3",
+    "exec": "npm run compile && npm start"
+}

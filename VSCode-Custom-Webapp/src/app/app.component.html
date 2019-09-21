@@ -1,0 +1,33 @@
+<mat-toolbar class="example-header">
+    <mat-icon (click)="sidenav.toggle()" class="home-icon" aria-hidden="false" aria-label="Menu icon">menu</mat-icon>&nbsp;
+    <div>Custom Editor</div>
+    <!-- <img class="shell-icon" height="26" width="26" src="assets/other-icons/shell-icon.png" /> -->
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened class="example-sidenav" [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
+        <app-tree-view></app-tree-view>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="example-content">
+        <div class="block-editor" *ngIf="refreshingEditor === null">
+            <p class="welcome-screen" *ngIf="errorMessageFileLoading === ''">Welcome to Blah-Blah Editor!</p>
+            <p class="error-message" *ngIf="errorMessageFileLoading !== ''">ERROR: {{errorMessageFileLoading}} </p>
+        </div>
+        <div class="block-editor" *ngIf="refreshingEditor === true">
+            <mat-icon [inline]="true" class="rotation refresh-icon-big" aria-hidden="false" aria-label="Example home icon">refresh</mat-icon>
+        </div>
+        <div class="content-header" *ngIf="refreshingEditor === false">
+            <mat-icon class="refresh-icon-editor-small" (click)="reloadFileAgain()" aria-hidden="false" aria-label="Example home icon">refresh</mat-icon>
+            <div class="save-icon" matRipple title="Save" (click)="saveFile()">Save</div>
+            <div class="close-icon" matRipple title="Close" (click)="closeFile()">Close</div>
+        </div>
+        <ngx-monaco-editor class="my-code-editor" *ngIf="refreshingEditor === false" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer">
+    <span>{{ footerInfo.message }}</span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

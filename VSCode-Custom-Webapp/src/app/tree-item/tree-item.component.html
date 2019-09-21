@@ -1,0 +1,15 @@
+<ul class="e-ul">
+    <li class="e-list-item">
+        <div class="e-fullrow" title="{{item.name}}&#013;Size: {{((item.size/1024).toFixed(2)) + 'KB'}}" (click)="selectItem(item)"></div>
+        <div class="e-text-content">
+            <div class="e-icons" (click)="toggle()" [ngClass]="item.isOpened ? 'e-icon-collapsible': 'e-icon-expandable'" *ngIf="item.type === 'folder'"></div>
+            <!-- <div class="e-list-icon folder" *ngIf="item.type === 'folder'"></div> -->
+            <img class="e-list-icon" height="18" width="18" *ngIf="item.type === 'folder'" src="assets/vs-icons/folder.png" />
+            <img class="e-list-icon" height="18" width="18" *ngIf="item.type === 'file'" src="assets/vs-icons/{{ item['iconType'] }}.png" />
+            <span class="e-list-text" (click)="selectItem(item)">{{item.name}}</span>
+        </div>
+        <ng-template [ngIf]="item.type === 'folder' && item.children.length > 0 && !!item.isOpened">
+            <app-tree-item *ngFor="let i of item.children" [item]="i"></app-tree-item>
+        </ng-template>
+    </li>
+</ul>

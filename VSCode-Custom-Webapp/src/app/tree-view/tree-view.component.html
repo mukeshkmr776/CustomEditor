@@ -1,0 +1,11 @@
+<div class="tree-header">
+    <mat-icon class="show-hand icon-open" aria-hidden="false" aria-label="Example home icon" (click)="chooseDirectoryPath()">open_in_new</mat-icon>
+    <mat-icon class="show-hand icon-refresh" [ngClass]="{'rotation': isRefreshingTreeList }" (click)="getTree()" aria-hidden="false" aria-label="Example home icon">refresh</mat-icon>
+    <img class="icon-close-all" (click)="collapseAllDirectory()" width="20" height="20" src="assets/other-icons/close-all.svg" />
+</div>
+<div class="e-font-family e-treeview" *ngIf="item !== null">
+    <app-tree-item [item]="item"></app-tree-item>
+</div>
+<div class="block-tree" *ngIf="isRefreshingTreeList">
+    <mat-icon [inline]="true" class="refresh-icon-big rotation" aria-hidden="false" aria-label="Example home icon">refresh</mat-icon>
+</div>
